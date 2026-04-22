@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="sq">
 <head>
 <meta charset="UTF-8">
@@ -7,7 +6,7 @@
 <title>FSK - Kalkulatori i Fitnesit Fizik</title>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-  :root {
+:root {
   --army-dark: #0f140c;
   --army-green: #3d5a2a;
   --army-mid: #5f8f3f;
@@ -20,592 +19,151 @@
   --card-bg: #1a2114;
   --border: #4e7a35;
   --input-bg: #0f140c;
-  --text-light: #e6f2c8;
 }
-
 * { box-sizing: border-box; margin: 0; padding: 0; }
-
 body {
   background: var(--army-dark);
   color: var(--army-khaki);
   font-family: 'Source Sans 3', sans-serif;
   min-height: 100vh;
-
   background-image:
-    linear-gradient(rgba(15,20,12,0.92), rgba(15,20,12,0.92)),
-    url('fsklogo.png'),
     repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(61,90,42,0.08) 40px, rgba(61,90,42,0.08) 41px),
     repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(61,90,42,0.08) 40px, rgba(61,90,42,0.08) 41px);
-
-  background-size: cover, 400px, auto, auto;
-  background-repeat: no-repeat, no-repeat, repeat, repeat;
-  background-position: center, center, 0 0, 0 0;
 }
-
 header {
-background: linear-gradient(135deg, #0d1208 0%, #1a2a10 50%, #0d1208 100%);
-border-bottom: 3px solid var(--army-mid);
-padding: 0;
-position: sticky;
-top: 0;
-z-index: 100;
-box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+  background: linear-gradient(135deg, #0d1208 0%, #1a2a10 50%, #0d1208 100%);
+  border-bottom: 3px solid var(--army-mid);
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
 }
-
 .header-inner {
-max-width: 1100px;
-margin: 0 auto;
-padding: 14px 24px;
-display: flex;
-align-items: center;
-gap: 18px;
+  max-width: 1100px; margin: 0 auto; padding: 14px 24px;
+  display: flex; align-items: center; gap: 18px;
 }
-
 .header-emblem {
-width: 52px;
-height: 52px;
-border: 2px solid var(--gold);
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-background: radial-gradient(circle, #2a3d1a, #1a1f14);
-font-size: 22px;
-flex-shrink: 0;
+  width: 52px; height: 52px; border: 2px solid var(--gold); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: radial-gradient(circle, #2a3d1a, #1a1f14); font-size: 22px; flex-shrink: 0;
 }
-
-.header-text h1 {
-font-family: ‘Oswald’, sans-serif;
-font-size: 1.5rem;
-font-weight: 700;
-letter-spacing: 3px;
-color: var(--gold);
-text-transform: uppercase;
-}
-
-.header-text p {
-font-size: 0.75rem;
-color: var(--army-tan);
-letter-spacing: 2px;
-text-transform: uppercase;
-margin-top: 2px;
-}
-
-.header-badge {
-margin-left: auto;
-background: var(--army-green);
-border: 1px solid var(--army-light);
-padding: 4px 12px;
-border-radius: 2px;
-font-family: ‘Oswald’, sans-serif;
-font-size: 0.7rem;
-letter-spacing: 2px;
-color: var(--army-khaki);
-text-transform: uppercase;
-}
-
-.container {
-max-width: 1100px;
-margin: 0 auto;
-padding: 28px 20px 60px;
-}
-
-/* — INFO PANEL — */
-.info-panel {
-background: var(--card-bg);
-border: 1px solid var(--border);
-border-left: 4px solid var(--gold);
-padding: 16px 20px;
-margin-bottom: 28px;
-border-radius: 2px;
-}
-.info-panel p {
-font-size: 0.88rem;
-color: var(--army-tan);
-line-height: 1.6;
-}
+.header-text h1 { font-family: 'Oswald', sans-serif; font-size: 1.5rem; font-weight: 700; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; }
+.header-text p  { font-size: 0.75rem; color: var(--army-tan); letter-spacing: 2px; text-transform: uppercase; margin-top: 2px; }
+.header-badge   { margin-left: auto; background: var(--army-green); border: 1px solid var(--army-light); padding: 4px 12px; border-radius: 2px; font-family: 'Oswald', sans-serif; font-size: 0.7rem; letter-spacing: 2px; color: var(--army-khaki); text-transform: uppercase; }
+.container { max-width: 1100px; margin: 0 auto; padding: 28px 20px 60px; }
+.info-panel { background: var(--card-bg); border: 1px solid var(--border); border-left: 4px solid var(--gold); padding: 16px 20px; margin-bottom: 28px; border-radius: 2px; }
+.info-panel p { font-size: 0.88rem; color: var(--army-khaki); line-height: 1.6; }
 .info-panel strong { color: var(--army-light); }
+.section-label { font-family: 'Oswald', sans-serif; font-size: 0.72rem; letter-spacing: 3px; text-transform: uppercase; color: var(--army-light); margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+.section-label::after { content: ''; flex: 1; height: 1px; background: linear-gradient(to right, var(--border), transparent); }
+.profile-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 28px; }
+@media (max-width: 600px) { .profile-grid { grid-template-columns: 1fr; } .header-badge { display: none; } }
+.form-group label { display: block; font-family: 'Oswald', sans-serif; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--army-tan); margin-bottom: 6px; }
+.form-group select, .form-group input { width: 100%; background: var(--input-bg); border: 1px solid var(--border); color: var(--white); padding: 10px 14px; font-family: 'Oswald', sans-serif; font-size: 1rem; letter-spacing: 1px; border-radius: 2px; outline: none; transition: border-color 0.2s; appearance: none; -webkit-appearance: none; }
+.form-group select:focus, .form-group input:focus { border-color: var(--army-light); box-shadow: 0 0 0 2px rgba(122,171,80,0.15); }
+.select-wrapper { position: relative; }
+.select-wrapper::after { content: '▾'; position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--army-light); pointer-events: none; font-size: 0.9rem; }
+.disciplines-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 28px; }
+@media (max-width: 700px) { .disciplines-grid { grid-template-columns: 1fr; } }
+.discipline-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 2px; overflow: hidden; transition: border-color 0.2s; }
+.discipline-card:hover { border-color: var(--army-light); }
+.disc-header { background: linear-gradient(135deg, #2a3d1a, #1e2d14); padding: 12px 16px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--border); }
+.disc-icon { width: 32px; height: 32px; background: var(--army-green); border: 1px solid var(--army-light); border-radius: 2px; display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }
+.disc-title { font-family: 'Oswald', sans-serif; font-size: 0.95rem; font-weight: 600; letter-spacing: 1px; color: var(--army-khaki); }
+.disc-subtitle { font-size: 0.72rem; color: #b8c79a; margin-top: 2px; }
+.disc-body { padding: 14px 16px; }
 
-/* — SECTION LABELS — */
-.section-label {
-font-family: ‘Oswald’, sans-serif;
-font-size: 0.72rem;
-letter-spacing: 3px;
-text-transform: uppercase;
-color: var(--army-light);
-margin-bottom: 10px;
-display: flex;
-align-items: center;
-gap: 10px;
+/* ── TOP ROW: inputs + score ── */
+.disc-input-row { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.num-input {
+  width: 70px; flex-shrink: 0;
+  background: var(--input-bg); border: 1px solid var(--border); color: var(--white);
+  padding: 9px 6px; font-family: 'Oswald', sans-serif; font-size: 1rem;
+  border-radius: 2px; outline: none; text-align: center; transition: border-color 0.2s;
+  appearance: none; -webkit-appearance: none; -moz-appearance: textfield;
 }
-.section-label::after {
-content: ‘’;
-flex: 1;
-height: 1px;
-background: linear-gradient(to right, var(--border), transparent);
-}
-
-/* — PROFILE INPUTS — */
-.profile-grid {
-display: grid;
-grid-template-columns: 1fr 1fr 1fr;
-gap: 14px;
-margin-bottom: 28px;
-}
-
-@media (max-width: 600px) {
-.profile-grid { grid-template-columns: 1fr; }
-.header-badge { display: none; }
-}
-
-.form-group label {
-display: block;
-font-family: ‘Oswald’, sans-serif;
-font-size: 0.7rem;
-letter-spacing: 2px;
-text-transform: uppercase;
-color: var(--army-tan);
-margin-bottom: 6px;
-}
-
-.form-group select,
-.form-group input {
-width: 100%;
-background: var(--input-bg);
-border: 1px solid var(--border);
-color: var(--white);
-padding: 10px 14px;
-font-family: ‘Oswald’, sans-serif;
-font-size: 1rem;
-letter-spacing: 1px;
-border-radius: 2px;
-outline: none;
-transition: border-color 0.2s;
-appearance: none;
--webkit-appearance: none;
-}
-
-.form-group select:focus,
-.form-group input:focus {
-border-color: var(--army-light);
-box-shadow: 0 0 0 2px rgba(122,171,80,0.15);
-}
-
-.select-wrapper {
-position: relative;
-}
-.select-wrapper::after {
-content: ‘▾’;
-position: absolute;
-right: 12px;
-top: 50%;
-transform: translateY(-50%);
-color: var(--army-light);
-pointer-events: none;
-font-size: 0.9rem;
-}
-
-/* — DISCIPLINES GRID — */
-.disciplines-grid {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 14px;
-margin-bottom: 28px;
-}
-
-@media (max-width: 700px) {
-.disciplines-grid { grid-template-columns: 1fr; }
-}
-
-.discipline-card {
-background: var(--card-bg);
-border: 1px solid var(--border);
-border-radius: 2px;
-overflow: hidden;
-transition: border-color 0.2s;
-}
-
-.discipline-card:hover {
-border-color: var(--army-light);
-}
-
-.disc-header {
-background: linear-gradient(135deg, #2a3d1a, #1e2d14);
-padding: 12px 16px;
-display: flex;
-align-items: center;
-gap: 10px;
-border-bottom: 1px solid var(--border);
-}
-
-.disc-icon {
-width: 32px;
-height: 32px;
-background: var(--army-green);
-border: 1px solid var(--army-light);
-border-radius: 2px;
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 15px;
-flex-shrink: 0;
-}
-
-.disc-title {
-font-family: ‘Oswald’, sans-serif;
-font-size: 0.95rem;
-font-weight: 600;
-letter-spacing: 1px;
-color: var(--army-khaki);
-}
-
-.disc-subtitle {
-font-size: 0.72rem;
-color: var(--army-tan);
-margin-top: 2px;
-letter-spacing: 0.5px;
-}
-
-.disc-body {
-padding: 14px 16px;
-}
-
-.disc-input-row {
-display: flex;
-align-items: center;
-gap: 10px;
-}
-
-.disc-input-row input,
-.disc-input-row select {
-flex: 1;
-background: var(--input-bg);
-border: 1px solid var(--border);
-color: var(--white);
-padding: 10px 12px;
-font-family: ‘Oswald’, sans-serif;
-font-size: 1.05rem;
-border-radius: 2px;
-outline: none;
-transition: border-color 0.2s;
-appearance: none;
--webkit-appearance: none;
-}
-
-.disc-input-row input:focus,
-.disc-input-row select:focus {
-border-color: var(--army-light);
-}
-
-.disc-unit {
-font-family: ‘Oswald’, sans-serif;
-font-size: 0.75rem;
-color: var(--army-tan);
-letter-spacing: 1px;
-white-space: nowrap;
-}
-
-.disc-score {
-text-align: center;
-padding: 8px 10px;
-background: #111610;
-border: 1px solid var(--border);
-border-radius: 2px;
-min-width: 60px;
-}
-
-.disc-score .score-val {
-font-family: ‘Oswald’, sans-serif;
-font-size: 1.6rem;
-font-weight: 700;
-color: var(--army-light);
-line-height: 1;
-}
-
-.disc-score .score-lbl {
-font-size: 0.6rem;
-color: var(--army-tan);
-letter-spacing: 1px;
-text-transform: uppercase;
-margin-top: 2px;
-}
-
-.score-val.pass { color: var(--army-light); }
-.score-val.fail { color: var(--red); }
+.num-input::-webkit-inner-spin-button, .num-input::-webkit-outer-spin-button { -webkit-appearance: none; }
+.num-input:focus { border-color: var(--army-light); }
+.disc-unit { font-family: 'Oswald', sans-serif; font-size: 0.72rem; color: var(--army-tan); letter-spacing: 1px; white-space: nowrap; }
+.disc-score { text-align: center; padding: 6px 8px; background: #0a0e08; border: 1px solid var(--border); border-radius: 2px; min-width: 56px; margin-left: auto; }
+.disc-score .score-val { font-family: 'Oswald', sans-serif; font-size: 1.5rem; font-weight: 700; line-height: 1; }
+.disc-score .score-lbl { font-size: 0.58rem; color: var(--army-tan); letter-spacing: 1px; text-transform: uppercase; margin-top: 1px; }
+.score-val.pass      { color: var(--army-light); }
+.score-val.fail      { color: var(--red); }
 .score-val.excellent { color: var(--gold); }
-.score-val.na { color: #555; }
+.score-val.na        { color: #2e4020; }
 
-/* — CALCULATE BUTTON — */
-.calc-btn-wrap {
-text-align: center;
-margin-bottom: 28px;
+/* ── SLIDER ROW ── */
+.slider-row { display: flex; align-items: center; gap: 6px; }
+.sl-label { font-family: 'Oswald', sans-serif; font-size: 0.63rem; color: #4a6a30; white-space: nowrap; min-width: 30px; }
+.sl-label.right { text-align: right; }
+
+input[type="range"].disc-slider {
+  flex: 1; -webkit-appearance: none; appearance: none;
+  height: 20px; background: transparent; cursor: pointer; outline: none;
 }
-
-button#calcBtn {
-background: linear-gradient(135deg, #4e7a35, #3d5a2a);
-border: 2px solid var(--army-light);
-color: var(--white);
-font-family: ‘Oswald’, sans-serif;
-font-size: 1.1rem;
-letter-spacing: 3px;
-text-transform: uppercase;
-padding: 14px 48px;
-cursor: pointer;
-border-radius: 2px;
-transition: all 0.2s;
+input[type="range"].disc-slider::-webkit-slider-runnable-track {
+  height: 4px;
+  background: linear-gradient(to right, var(--army-mid) var(--pct,0%), #1c2a12 var(--pct,0%));
+  border-radius: 2px;
 }
-
-button#calcBtn:hover {
-background: linear-gradient(135deg, #5d8f40, #4e7a35);
-box-shadow: 0 0 20px rgba(122,171,80,0.3);
+input[type="range"].disc-slider::-moz-range-track { height: 4px; background: #1c2a12; border-radius: 2px; }
+input[type="range"].disc-slider::-moz-range-progress { height: 4px; background: var(--army-mid); border-radius: 2px; }
+input[type="range"].disc-slider::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 16px; height: 16px;
+  border-radius: 2px;
+  background: linear-gradient(135deg, var(--army-light), var(--army-mid));
+  border: 2px solid #0f140c;
+  box-shadow: 0 0 5px rgba(122,171,80,0.45);
+  margin-top: -6px; transition: box-shadow 0.15s, transform 0.1s;
 }
+input[type="range"].disc-slider:active::-webkit-slider-thumb { box-shadow: 0 0 10px rgba(122,171,80,0.75); transform: scale(1.2); }
+input[type="range"].disc-slider::-moz-range-thumb { width: 16px; height: 16px; border-radius: 2px; background: linear-gradient(135deg, var(--army-light), var(--army-mid)); border: 2px solid #0f140c; box-shadow: 0 0 5px rgba(122,171,80,0.45); cursor: pointer; }
 
-/* — RESULTS PANEL — */
-#results {
-display: none;
-background: var(--card-bg);
-border: 1px solid var(--border);
-border-radius: 2px;
-overflow: hidden;
-}
+/* time pair */
+.time-inputs { display: flex; align-items: center; gap: 4px; }
+.time-inputs .sep { color: var(--army-tan); font-family: 'Oswald', sans-serif; font-size: 1.1rem; font-weight: 600; }
 
-.results-header {
-background: linear-gradient(135deg, #2a3d1a, #1e2d14);
-padding: 18px 24px;
-display: flex;
-align-items: center;
-justify-content: space-between;
-border-bottom: 2px solid var(--army-mid);
-}
+/* ── BUTTON ── */
+.calc-btn-wrap { text-align: center; margin-bottom: 28px; }
+button#calcBtn { background: linear-gradient(135deg, #4e7a35, #3d5a2a); border: 2px solid var(--army-light); color: var(--white); font-family: 'Oswald', sans-serif; font-size: 1.1rem; letter-spacing: 3px; text-transform: uppercase; padding: 14px 48px; cursor: pointer; border-radius: 2px; transition: all 0.2s; }
+button#calcBtn:hover { background: linear-gradient(135deg, #5d8f40, #4e7a35); box-shadow: 0 0 20px rgba(122,171,80,0.3); }
 
-.results-header h2 {
-font-family: ‘Oswald’, sans-serif;
-font-size: 1rem;
-letter-spacing: 3px;
-text-transform: uppercase;
-color: var(--gold);
-}
-
-.total-score-display {
-text-align: right;
-}
-
-.total-score-display .big-score {
-font-family: ‘Oswald’, sans-serif;
-font-size: 3rem;
-font-weight: 700;
-line-height: 1;
-}
-
-.total-score-display .big-score.pass-total { color: var(--army-light); }
-.total-score-display .big-score.fail-total { color: var(--red); }
-.total-score-display .big-score.exc-total { color: var(--gold); }
-
-.total-score-display .score-of {
-font-size: 0.75rem;
-color: var(--army-tan);
-letter-spacing: 1px;
-}
-
-.verdict-badge {
-display: inline-block;
-font-family: ‘Oswald’, sans-serif;
-font-size: 0.7rem;
-letter-spacing: 2px;
-padding: 3px 10px;
-border-radius: 2px;
-text-transform: uppercase;
-margin-top: 4px;
-}
-
+/* ── RESULTS ── */
+#results { display: none; background: var(--card-bg); border: 1px solid var(--border); border-radius: 2px; overflow: hidden; }
+.results-header { background: linear-gradient(135deg, #2a3d1a, #1e2d14); padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid var(--army-mid); }
+.results-header h2 { font-family: 'Oswald', sans-serif; font-size: 1rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); }
+.total-score-display { text-align: right; }
+.big-score { font-family: 'Oswald', sans-serif; font-size: 3rem; font-weight: 700; line-height: 1; }
+.big-score.pass-total { color: var(--army-light); } .big-score.fail-total { color: var(--red); } .big-score.exc-total { color: var(--gold); }
+.score-of { font-size: 0.75rem; color: var(--army-tan); letter-spacing: 1px; }
+.verdict-badge { display: inline-block; font-family: 'Oswald', sans-serif; font-size: 0.7rem; letter-spacing: 2px; padding: 3px 10px; border-radius: 2px; text-transform: uppercase; margin-top: 4px; }
 .verdict-badge.pass-v { background: var(--army-green); color: var(--army-khaki); border: 1px solid var(--army-light); }
 .verdict-badge.fail-v { background: #5a1111; color: #ffaaaa; border: 1px solid var(--red); }
 .verdict-badge.exc-v  { background: #4a3500; color: var(--gold); border: 1px solid var(--gold); }
-
-.results-body {
-padding: 20px 24px;
-}
-
-.results-table {
-width: 100%;
-border-collapse: collapse;
-font-size: 0.9rem;
-}
-
-.results-table th {
-font-family: ‘Oswald’, sans-serif;
-font-size: 0.7rem;
-letter-spacing: 2px;
-text-transform: uppercase;
-color: var(--army-tan);
-padding: 8px 12px;
-text-align: left;
-border-bottom: 1px solid var(--border);
-}
-
-.results-table td {
-padding: 10px 12px;
-border-bottom: 1px solid rgba(61,90,42,0.3);
-}
-
+.results-body { padding: 20px 24px; }
+.results-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.results-table th { font-family: 'Oswald', sans-serif; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--army-khaki); padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+.results-table td { padding: 10px 12px; border-bottom: 1px solid rgba(61,90,42,0.3); color: #d8e6c0; }
 .results-table tr:last-child td { border-bottom: none; }
-
-.results-table .disc-name {
-font-family: ‘Oswald’, sans-serif;
-font-size: 0.88rem;
-letter-spacing: 0.5px;
-color: var(--army-khaki);
-}
-
-.results-table .res-score {
-font-family: ‘Oswald’, sans-serif;
-font-size: 1.2rem;
-font-weight: 600;
-text-align: right;
-}
-
-.score-bar-wrap {
-width: 140px;
-}
-
-.score-bar {
-height: 6px;
-background: #111610;
-border-radius: 3px;
-overflow: hidden;
-margin-top: 4px;
-}
-
-.score-bar-fill {
-height: 100%;
-border-radius: 3px;
-transition: width 0.8s ease;
-}
-
+.disc-name { font-family: 'Oswald', sans-serif; font-size: 0.88rem; color: var(--army-khaki); }
+.score-bar-wrap { width: 140px; }
+.score-bar { height: 6px; background: #111610; border-radius: 3px; overflow: hidden; margin-top: 4px; }
+.score-bar-fill { height: 100%; border-radius: 3px; transition: width 0.8s ease; }
 .bar-pass { background: linear-gradient(to right, var(--army-mid), var(--army-light)); }
 .bar-fail { background: var(--red); }
 .bar-exc  { background: linear-gradient(to right, var(--gold), #f0c040); }
-
-.status-chip {
-font-family: ‘Oswald’, sans-serif;
-font-size: 0.65rem;
-letter-spacing: 1.5px;
-padding: 2px 8px;
-border-radius: 2px;
-text-transform: uppercase;
-}
-
+.status-chip { font-family: 'Oswald', sans-serif; font-size: 0.65rem; letter-spacing: 1.5px; padding: 2px 8px; border-radius: 2px; text-transform: uppercase; }
 .chip-pass { background: rgba(78,122,53,0.3); color: var(--army-light); border: 1px solid rgba(122,171,80,0.4); }
 .chip-fail { background: rgba(178,34,34,0.3); color: #ff8888; border: 1px solid rgba(178,34,34,0.4); }
 .chip-exc  { background: rgba(212,160,23,0.2); color: var(--gold); border: 1px solid rgba(212,160,23,0.4); }
 .chip-na   { background: rgba(80,80,80,0.2); color: #777; border: 1px solid #444; }
-
-/* score breakdown across top */
-.score-breakdown {
-display: grid;
-grid-template-columns: repeat(6, 1fr);
-gap: 8px;
-margin-bottom: 20px;
-}
-
-@media (max-width: 700px) {
-.score-breakdown { grid-template-columns: repeat(3, 1fr); }
-}
-
-.breakdown-item {
-background: #111610;
-border: 1px solid var(--border);
-border-radius: 2px;
-padding: 8px;
-text-align: center;
-}
-
-.breakdown-item .b-score {
-font-family: ‘Oswald’, sans-serif;
-font-size: 1.4rem;
-font-weight: 600;
-line-height: 1;
-}
-
-.breakdown-item .b-label {
-font-size: 0.62rem;
-color: var(--army-tan);
-letter-spacing: 0.5px;
-margin-top: 3px;
-line-height: 1.3;
-}
-
-/* note */
-.note {
-margin-top: 16px;
-padding: 12px 16px;
-background: rgba(212,160,23,0.08);
-border-left: 3px solid var(--gold);
-font-size: 0.8rem;
-color: var(--army-tan);
-line-height: 1.6;
-}
-
-/* time inputs helper */
-.time-inputs {
-display: flex;
-align-items: center;
-gap: 6px;
-flex: 1;
-}
-.time-inputs input {
-background: var(--input-bg);
-border: 1px solid var(--border);
-color: var(--white);
-padding: 10px 8px;
-font-family: ‘Oswald’, sans-serif;
-font-size: 1.05rem;
-border-radius: 2px;
-outline: none;
-width: 60px;
-text-align: center;
-transition: border-color 0.2s;
-}
-.time-inputs input:focus { border-color: var(--army-light); }
-.time-inputs .sep {
-color: var(--army-tan);
-font-family: ‘Oswald’, sans-serif;
-font-size: 1.2rem;
-font-weight: 600;
-flex-shrink: 0;
-}
-
-footer {
-text-align: center;
-padding: 20px;
-font-size: 0.72rem;
-color: #444;
-letter-spacing: 1px;
-text-transform: uppercase;
-}
-
-.info-panel p {
-  color: var(--army-khaki);
-}
-
-.disc-title {
-  color: var(--army-khaki);
-}
-
-.disc-subtitle {
-  color: #b8c79a;
-}
-
-.results-table td {
-  color: #d8e6c0;
-}
-
-.results-table th {
-  color: var(--army-khaki);
-}
-
+.score-breakdown { display: grid; grid-template-columns: repeat(6,1fr); gap: 8px; margin-bottom: 20px; }
+@media (max-width:700px) { .score-breakdown { grid-template-columns: repeat(3,1fr); } }
+.breakdown-item { background: #111610; border: 1px solid var(--border); border-radius: 2px; padding: 8px; text-align: center; }
+.b-score { font-family: 'Oswald', sans-serif; font-size: 1.4rem; font-weight: 600; line-height: 1; }
+.b-label { font-size: 0.62rem; color: var(--army-tan); letter-spacing: 0.5px; margin-top: 3px; line-height: 1.3; }
+.note { margin-top: 16px; padding: 12px 16px; background: rgba(212,160,23,0.08); border-left: 3px solid var(--gold); font-size: 0.8rem; color: var(--army-tan); line-height: 1.6; }
+footer { text-align: center; padding: 20px; font-size: 0.72rem; color: #444; letter-spacing: 1px; text-transform: uppercase; }
 </style>
-
 </head>
 <body>
 
@@ -621,19 +179,16 @@ text-transform: uppercase;
 </header>
 
 <div class="container">
-
   <div class="info-panel">
-    <p>Zgjidhni <strong>gjininë</strong> dhe <strong>grupin e moshës</strong>, pastaj shkruani rezultatet për secilën disiplinë. Kalkulatori llogarit pikët sipas tabelave zyrtare të FSK-së.</p>
+    <p>Zgjidhni <strong>gjininë</strong> dhe <strong>grupin e moshës</strong>. Shkruani rezultatin ose <strong>tërhiqni shigjeten</strong> majtas/djathtas për çdo disiplinë — pikët llogariten automatikisht.</p>
   </div>
-
-  <!-- PROFILE -->
 
   <div class="section-label">Të Dhënat Personale</div>
   <div class="profile-grid">
     <div class="form-group">
       <label>Gjinia</label>
       <div class="select-wrapper">
-        <select id="gender" onchange="resetScores()">
+        <select id="gender" onchange="onProfileChange()">
           <option value="M">Mashkull (M)</option>
           <option value="F">Femër (F)</option>
         </select>
@@ -642,7 +197,7 @@ text-transform: uppercase;
     <div class="form-group">
       <label>Grupi i Moshës</label>
       <div class="select-wrapper">
-        <select id="ageGroup" onchange="resetScores()">
+        <select id="ageGroup" onchange="onProfileChange()">
           <option value="18-26">18–26</option>
           <option value="27-36">27–36</option>
           <option value="37-45">37–45</option>
@@ -656,152 +211,140 @@ text-transform: uppercase;
     </div>
   </div>
 
-  <!-- DISCIPLINES -->
-
   <div class="section-label">Disiplinat e Testit</div>
   <div class="disciplines-grid">
 
-```
-<!-- 1. SPRINT -->
-<div class="discipline-card">
-  <div class="disc-header">
-    <div class="disc-icon">⚡</div>
-    <div>
-      <div class="disc-title">Vrapim Sprint me Shtirje</div>
-      <div class="disc-subtitle">Tabela 4 & 5 — Kohë në sekonda</div>
-    </div>
-  </div>
-  <div class="disc-body">
-    <div class="disc-input-row">
-      <input type="number" id="sprint" placeholder="p.sh. 42" min="30" max="80" oninput="calcSingle('sprint')">
-      <span class="disc-unit">sek</span>
-      <div class="disc-score" id="score_sprint">
-        <div class="score-val na" id="sv_sprint">—</div>
-        <div class="score-lbl">Pikë</div>
+    <!-- 1. SPRINT -->
+    <div class="discipline-card">
+      <div class="disc-header">
+        <div class="disc-icon">⚡</div>
+        <div><div class="disc-title">Vrapim Sprint me Shtirje</div><div class="disc-subtitle">Tabela 4 &amp; 5 — sekonda (më pak = më mirë)</div></div>
+      </div>
+      <div class="disc-body">
+        <div class="disc-input-row">
+          <input type="number" class="num-input" id="sprint" placeholder="sek" oninput="onNum('sprint')">
+          <span class="disc-unit">sek</span>
+          <div class="disc-score"><div class="score-val na" id="sv_sprint">—</div><div class="score-lbl">Pikë</div></div>
+        </div>
+        <div class="slider-row">
+          <span class="sl-label" id="smin_sprint">37</span>
+          <input type="range" class="disc-slider" id="sl_sprint" oninput="onSlider('sprint')">
+          <span class="sl-label right" id="smax_sprint">76</span>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- 2. PUSH-UPS -->
-<div class="discipline-card">
-  <div class="disc-header">
-    <div class="disc-icon">💪</div>
-    <div>
-      <div class="disc-title">Pompa (1 minutë)</div>
-      <div class="disc-subtitle">Tabela 5 & 6 — Numri i përsëritjeve</div>
-    </div>
-  </div>
-  <div class="disc-body">
-    <div class="disc-input-row">
-      <input type="number" id="pushups" placeholder="p.sh. 45" min="0" max="70" oninput="calcSingle('pushups')">
-      <span class="disc-unit">pompë</span>
-      <div class="disc-score" id="score_pushups">
-        <div class="score-val na" id="sv_pushups">—</div>
-        <div class="score-lbl">Pikë</div>
+    <!-- 2. PUSH-UPS -->
+    <div class="discipline-card">
+      <div class="disc-header">
+        <div class="disc-icon">💪</div>
+        <div><div class="disc-title">Pompa (1 minutë)</div><div class="disc-subtitle">Tabela 5 &amp; 6 — numri i përsëritjeve</div></div>
+      </div>
+      <div class="disc-body">
+        <div class="disc-input-row">
+          <input type="number" class="num-input" id="pushups" placeholder="nr." oninput="onNum('pushups')">
+          <span class="disc-unit">pompë</span>
+          <div class="disc-score"><div class="score-val na" id="sv_pushups">—</div><div class="score-lbl">Pikë</div></div>
+        </div>
+        <div class="slider-row">
+          <span class="sl-label" id="smin_pushups">9</span>
+          <input type="range" class="disc-slider" id="sl_pushups" oninput="onSlider('pushups')">
+          <span class="sl-label right" id="smax_pushups">55</span>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- 3. LONG JUMP -->
-<div class="discipline-card">
-  <div class="disc-header">
-    <div class="disc-icon">🦘</div>
-    <div>
-      <div class="disc-title">Kërcim së Largu</div>
-      <div class="disc-subtitle">Tabela 8 & 9 — Distanca në metra</div>
-    </div>
-  </div>
-  <div class="disc-body">
-    <div class="disc-input-row">
-      <input type="number" id="longjump" placeholder="p.sh. 1.75" min="0.90" max="2.10" step="0.05" oninput="calcSingle('longjump')">
-      <span class="disc-unit">metra</span>
-      <div class="disc-score" id="score_longjump">
-        <div class="score-val na" id="sv_longjump">—</div>
-        <div class="score-lbl">Pikë</div>
+    <!-- 3. LONG JUMP -->
+    <div class="discipline-card">
+      <div class="disc-header">
+        <div class="disc-icon">🦘</div>
+        <div><div class="disc-title">Kërcim së Largu</div><div class="disc-subtitle">Tabela 8 &amp; 9 — distanca në metra</div></div>
+      </div>
+      <div class="disc-body">
+        <div class="disc-input-row">
+          <input type="number" class="num-input" id="longjump" placeholder="m" step="0.05" oninput="onNum('longjump')">
+          <span class="disc-unit">m</span>
+          <div class="disc-score"><div class="score-val na" id="sv_longjump">—</div><div class="score-lbl">Pikë</div></div>
+        </div>
+        <div class="slider-row">
+          <span class="sl-label" id="smin_longjump">1.00</span>
+          <input type="range" class="disc-slider" id="sl_longjump" oninput="onSlider('longjump')">
+          <span class="sl-label right" id="smax_longjump">2.00</span>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- 4. WEIGHTLIFTING -->
-<div class="discipline-card">
-  <div class="disc-header">
-    <div class="disc-icon">🏋️</div>
-    <div>
-      <div class="disc-title">Ngritje e Peshës</div>
-      <div class="disc-subtitle">Tabela 10 & 11 — Pesha në kg (5 herë)</div>
-    </div>
-  </div>
-  <div class="disc-body">
-    <div class="disc-input-row">
-      <input type="number" id="weightlift" placeholder="p.sh. 75" min="30" max="105" step="5" oninput="calcSingle('weightlift')">
-      <span class="disc-unit">kg</span>
-      <div class="disc-score" id="score_weightlift">
-        <div class="score-val na" id="sv_weightlift">—</div>
-        <div class="score-lbl">Pikë</div>
+    <!-- 4. WEIGHTLIFTING -->
+    <div class="discipline-card">
+      <div class="disc-header">
+        <div class="disc-icon">🏋️</div>
+        <div><div class="disc-title">Ngritje e Peshës</div><div class="disc-subtitle">Tabela 10 &amp; 11 — pesha në kg (5 herë)</div></div>
+      </div>
+      <div class="disc-body">
+        <div class="disc-input-row">
+          <input type="number" class="num-input" id="weightlift" placeholder="kg" step="5" oninput="onNum('weightlift')">
+          <span class="disc-unit">kg</span>
+          <div class="disc-score"><div class="score-val na" id="sv_weightlift">—</div><div class="score-lbl">Pikë</div></div>
+        </div>
+        <div class="slider-row">
+          <span class="sl-label" id="smin_weightlift">35</span>
+          <input type="range" class="disc-slider" id="sl_weightlift" oninput="onSlider('weightlift')">
+          <span class="sl-label right" id="smax_weightlift">100</span>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- 5. PULL-UPS -->
-<div class="discipline-card">
-  <div class="disc-header">
-    <div class="disc-icon">🤸</div>
-    <div>
-      <div class="disc-title">Mbajtje mbi Parakrahë</div>
-      <div class="disc-subtitle">Tabela 12 — Kohë (min:sek)</div>
-    </div>
-  </div>
-  <div class="disc-body">
-    <div class="disc-input-row">
-      <div class="time-inputs">
-        <input type="number" id="pullup_min" placeholder="min" min="0" max="5" oninput="calcSingle('pullup')">
-        <span class="sep">:</span>
-        <input type="number" id="pullup_sec" placeholder="sek" min="0" max="59" oninput="calcSingle('pullup')">
+    <!-- 5. BAR HOLD -->
+    <div class="discipline-card">
+      <div class="disc-header">
+        <div class="disc-icon">🤸</div>
+        <div><div class="disc-title">Mbajtje mbi Parakrahë</div><div class="disc-subtitle">Tabela 12 — kohë (min : sek)</div></div>
       </div>
-      <div class="disc-score" id="score_pullup">
-        <div class="score-val na" id="sv_pullup">—</div>
-        <div class="score-lbl">Pikë</div>
+      <div class="disc-body">
+        <div class="disc-input-row">
+          <div class="time-inputs">
+            <input type="number" class="num-input" id="pullup_min" placeholder="min" min="0" max="4" oninput="onNum('pullup')" style="width:52px">
+            <span class="sep">:</span>
+            <input type="number" class="num-input" id="pullup_sec" placeholder="sek" min="0" max="59" oninput="onNum('pullup')" style="width:52px">
+          </div>
+          <div class="disc-score"><div class="score-val na" id="sv_pullup">—</div><div class="score-lbl">Pikë</div></div>
+        </div>
+        <div class="slider-row">
+          <span class="sl-label" id="smin_pullup">0:46</span>
+          <input type="range" class="disc-slider" id="sl_pullup" oninput="onSlider('pullup')">
+          <span class="sl-label right" id="smax_pullup">3:40</span>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- 6. 2KM RUN -->
-<div class="discipline-card">
-  <div class="disc-header">
-    <div class="disc-icon">🏃</div>
-    <div>
-      <div class="disc-title">Vrapim 2 km</div>
-      <div class="disc-subtitle">Tabela 13 & 14 — Kohë (min:sek)</div>
-    </div>
-  </div>
-  <div class="disc-body">
-    <div class="disc-input-row">
-      <div class="time-inputs">
-        <input type="number" id="run_min" placeholder="min" min="7" max="17" oninput="calcSingle('run')">
-        <span class="sep">:</span>
-        <input type="number" id="run_sec" placeholder="sek" min="0" max="59" oninput="calcSingle('run')">
+    <!-- 6. 2KM RUN -->
+    <div class="discipline-card">
+      <div class="disc-header">
+        <div class="disc-icon">🏃</div>
+        <div><div class="disc-title">Vrapim 2 km</div><div class="disc-subtitle">Tabela 13 &amp; 14 — kohë (min : sek)</div></div>
       </div>
-      <div class="disc-score" id="score_run">
-        <div class="score-val na" id="sv_run">—</div>
-        <div class="score-lbl">Pikë</div>
+      <div class="disc-body">
+        <div class="disc-input-row">
+          <div class="time-inputs">
+            <input type="number" class="num-input" id="run_min" placeholder="min" min="7" max="17" oninput="onNum('run')" style="width:52px">
+            <span class="sep">:</span>
+            <input type="number" class="num-input" id="run_sec" placeholder="sek" min="0" max="59" oninput="onNum('run')" style="width:52px">
+          </div>
+          <div class="disc-score"><div class="score-val na" id="sv_run">—</div><div class="score-lbl">Pikë</div></div>
+        </div>
+        <div class="slider-row">
+          <span class="sl-label" id="smin_run">8:00</span>
+          <input type="range" class="disc-slider" id="sl_run" oninput="onSlider('run')">
+          <span class="sl-label right" id="smax_run">16:20</span>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-```
 
-  </div><!-- end disciplines-grid -->
+  </div>
 
   <div class="calc-btn-wrap">
     <button id="calcBtn" onclick="calculateAll()">▶ Llogarit Pikët</button>
   </div>
-
-  <!-- RESULTS -->
 
   <div id="results">
     <div class="results-header">
@@ -818,96 +361,63 @@ text-transform: uppercase;
     <div class="results-body">
       <div class="score-breakdown" id="scoreBreakdown"></div>
       <table class="results-table">
-        <thead>
-          <tr>
-            <th>Disiplina</th>
-            <th>Rezultati</th>
-            <th>Pikët</th>
-            <th>Bari</th>
-            <th>Statusi</th>
-          </tr>
-        </thead>
+        <thead><tr><th>Disiplina</th><th>Rezultati</th><th>Pikët</th><th>Bari</th><th>Statusi</th></tr></thead>
         <tbody id="resultsBody"></tbody>
       </table>
-      <div class="note">
-        <strong>Shënim:</strong> Minimumi për kalim është 60 pikë për çdo disiplinë. Totali minimal është 360 pikë (60%). Rezultati 540+ pikë (90%) konsiderohet <em>Ekselent</em>.
-      </div>
+      <div class="note"><strong>Shënim:</strong> Minimumi për kalim është 60 pikë për çdo disiplinë. Totali minimal është 360 pikë (60%). Rezultati 540+ pikë (90%) konsiderohet <em>Ekselent</em>.</div>
     </div>
   </div>
-
 </div>
 
 <footer>FSK — UNOFFICIAL &nbsp;|&nbsp; Standardet e Fitnesit Fizik</footer>
 
 <script>
-// ========================================================
-// SCORING DATA
-// ========================================================
-
-// TABLE 4 & 5: SPRINT (seconds → points), gender+age specific
-// Lower time = better
+// ================================================================
+// SCORING TABLES
+// ================================================================
 const sprintData = {
   M: {
     '18-26': [[37,100],[38,98],[39,96],[40,94],[41,92],[42,90],[43,88],[44,86],[45,83],[46,80],[47,77],[48,74],[49,72],[50,70],[51,68],[52,66],[53,64],[54,62],[55,60]],
     '27-36': [[39,100],[40,98],[41,96],[42,94],[43,92],[44,90],[45,88],[46,86],[47,83],[48,80],[49,77],[50,74],[51,72],[52,70],[53,68],[54,66],[55,64],[56,62],[57,60]],
     '37-45': [[42,100],[43,98],[44,96],[45,94],[46,92],[47,90],[48,88],[49,86],[50,83],[51,80],[52,77],[53,74],[54,72],[55,70],[56,68],[57,66],[58,64],[59,62],[60,60]],
-    '46-55': [[45,100],[46,98],[47,96],[48,94],[49,92],[50,90],[51,88],[52,86],[53,83],[54,80],[55,77],[56,74],[57,72],[58,70],[59,68],[62,66],[64,64],[68,60]],
+    '46-55': [[45,100],[46,98],[47,96],[48,94],[49,92],[50,90],[51,88],[52,86],[53,83],[54,80],[55,77],[56,74],[57,72],[58,70],[59,68],[62,66],[64,64],[68,62],[68,60]],
   },
   F: {
-    '18-26': [[47,100],[48,98],[59,96],[50,94],[52,92],[54,90],[55,88],[56,86],[57,83],[58,80],[59,77],[60,74],[61,72],[62,70],[63,68],[64,66],[65,64],[66,62],[67,60]],
+    '18-26': [[47,100],[48,98],[49,96],[50,94],[52,92],[54,90],[55,88],[56,86],[57,83],[58,80],[59,77],[60,74],[61,72],[62,70],[63,68],[64,66],[65,64],[66,62],[67,60]],
     '27-36': [[49,100],[50,98],[51,96],[52,94],[53,92],[54,90],[55,88],[56,86],[57,83],[58,80],[59,77],[60,74],[61,72],[62,70],[63,68],[64,66],[65,64],[66,62],[70,60]],
     '37-45': [[52,100],[53,98],[54,96],[55,94],[56,92],[57,90],[58,88],[59,86],[60,83],[61,80],[62,77],[63,74],[64,72],[65,70],[66,68],[67,66],[68,64],[69,62],[72,60]],
-    '46-55': [[54,100],[55,98],[56,96],[56,94],[58,92],[59,90],[60,88],[61,86],[62,83],[63,80],[64,77],[65,74],[66,72],[67,70],[68,68],[69,66],[70,64],[71,62],[76,60]],
+    '46-55': [[54,100],[55,98],[56,96],[57,94],[58,92],[59,90],[60,88],[61,86],[62,83],[63,80],[64,77],[65,74],[66,72],[67,70],[68,68],[69,66],[70,64],[71,62],[76,60]],
   }
 };
-
-// TABLE 5 (M) & 6 (F): PUSH-UPS per minute (reps → points)
-// Higher = better
 const pushupsData = {
   M: {
-    '18-26': [[55,100],[54,98],[53,96],[52,98],[51,96],[50,94],[49,92],[48,90],[47,88],[46,86],[45,84],[44,82],[43,79],[42,77],[41,76],[40,74],[39,72],[38,70],[37,69],[36,67],[35,65],[34,63],[33,60]],
-    '27-36': [[52,100],[51,98],[50,96],[49,98],[48,96],[47,94],[46,92],[45,90],[44,88],[43,86],[42,84],[41,82],[40,79],[39,77],[38,76],[37,74],[36,72],[35,70],[34,69],[33,67],[32,65],[31,63],[30,60]],
-    '37-45': [[45,100],[44,98],[43,96],[42,98],[41,96],[40,94],[39,92],[38,90],[37,88],[36,86],[35,84],[34,82],[33,79],[32,77],[31,76],[30,74],[29,72],[28,70],[27,69],[26,67],[25,65],[24,63],[23,60]],
-    '46-55': [[42,100],[41,98],[40,96],[39,98],[38,96],[37,94],[36,92],[35,90],[34,88],[33,86],[32,84],[31,82],[30,79],[29,77],[28,76],[27,74],[26,72],[25,70],[24,69],[23,67],[22,65],[21,63],[20,60]],
+    '18-26': [[55,100],[54,98],[53,96],[52,94],[51,92],[50,90],[49,88],[48,86],[47,84],[46,82],[45,80],[44,79],[43,77],[42,76],[41,74],[40,72],[39,70],[38,69],[37,67],[36,65],[35,63],[34,62],[33,60]],
+    '27-36': [[52,100],[51,98],[50,96],[49,94],[48,92],[47,90],[46,88],[45,86],[44,84],[43,82],[42,80],[41,79],[40,77],[39,76],[38,74],[37,72],[36,70],[35,69],[34,67],[33,65],[32,63],[31,62],[30,60]],
+    '37-45': [[45,100],[44,98],[43,96],[42,94],[41,92],[40,90],[39,88],[38,86],[37,84],[36,82],[35,80],[34,79],[33,77],[32,76],[31,74],[30,72],[29,70],[28,69],[27,67],[26,65],[25,63],[24,62],[23,60]],
+    '46-55': [[42,100],[41,98],[40,96],[39,94],[38,92],[37,90],[36,88],[35,86],[34,84],[33,82],[32,80],[31,79],[30,77],[29,76],[28,74],[27,72],[26,70],[25,69],[24,67],[23,65],[22,63],[21,62],[20,60]],
   },
   F: {
-    '18-26': [[38,100],[37,98],[36,96],[35,98],[34,96],[33,94],[32,92],[31,90],[29,88],[28,86],[27,84],[26,82],[25,79],[24,77],[23,76],[22,74],[21,72],[20,70],[19,69],[18,67],[16,65],[15,63],[13,60]],
-    '27-36': [[36,100],[35,98],[34,96],[33,98],[32,96],[31,94],[30,92],[29,90],[28,88],[27,86],[26,84],[25,82],[24,79],[23,77],[22,76],[21,74],[20,72],[19,70],[18,69],[16,67],[15,65],[14,63],[12,60]],
-    '37-45': [[33,100],[32,98],[31,96],[30,98],[29,96],[28,94],[27,92],[26,90],[25,88],[24,86],[23,84],[22,82],[21,79],[20,77],[19,76],[18,74],[17,72],[16,70],[15,69],[14,67],[13,65],[12,63],[11,60]],
-    '46-55': [[31,100],[30,98],[29,96],[28,98],[27,96],[26,94],[25,92],[24,90],[23,88],[22,86],[21,84],[20,82],[19,79],[18,77],[17,76],[16,74],[15,72],[14,70],[13,69],[12,67],[11,65],[10,63],[9,60]],
+    '18-26': [[38,100],[37,98],[36,96],[35,94],[34,92],[33,90],[32,88],[31,86],[29,84],[28,82],[27,80],[26,79],[25,77],[24,76],[23,74],[22,72],[21,70],[20,69],[19,67],[18,65],[16,63],[15,62],[13,60]],
+    '27-36': [[36,100],[35,98],[34,96],[33,94],[32,92],[31,90],[30,88],[29,86],[28,84],[27,82],[26,80],[25,79],[24,77],[23,76],[22,74],[21,72],[20,70],[19,69],[18,67],[16,65],[15,63],[14,62],[12,60]],
+    '37-45': [[33,100],[32,98],[31,96],[30,94],[29,92],[28,90],[27,88],[26,86],[25,84],[24,82],[23,80],[22,79],[21,77],[20,76],[19,74],[18,72],[17,70],[16,69],[15,67],[14,65],[13,63],[12,62],[11,60]],
+    '46-55': [[31,100],[30,98],[29,96],[28,94],[27,92],[26,90],[25,88],[24,86],[23,84],[22,82],[21,80],[20,79],[19,77],[18,76],[17,74],[16,72],[15,70],[14,69],[13,67],[12,65],[11,63],[10,62],[9,60]],
   }
 };
-
-// TABLE 8 (M) & 9 (F): LONG JUMP (meters → points)
-// Higher = better
 const longjumpData = {
   M: [[1.10,60],[1.25,63],[1.40,67],[1.55,73],[1.70,77],[1.75,83],[1.80,87],[1.85,93],[1.90,97],[2.00,100]],
   F: [[1.00,60],[1.10,63],[1.20,67],[1.30,73],[1.40,77],[1.50,83],[1.60,87],[1.70,93],[1.75,97],[1.80,100]],
 };
-
-// TABLE 10 (M) & 11 (F): WEIGHTLIFTING (kg → points, all ages same)
-// Higher = better
 const weightliftData = {
   M: [[50,60],[55,63],[65,67],[70,73],[75,77],[80,83],[85,87],[90,93],[95,97],[100,100]],
   F: [[35,60],[40,63],[45,67],[50,73],[55,77],[60,83],[65,87],[70,93],[75,97],[80,100]],
 };
-
-// TABLE 12: PULL-UP HOLD (seconds → points), same for M&F, age groups
-// Higher time = better
-// Stored as [seconds, points]
 const pullupData = {
-  '18-26': [[220,100],[216,99],[212,98],[208,97],[204,96],[200,95],[196,94],[192,93],[188,92],[184,91],[180,90],[176,89],[172,88],[168,87],[164,86],[160,85],[156,84],[152,83],[148,82],[144,81],[140,80],[136,79],[132,78],[128,77],[124,76],[120,75],[116,74],[112,73],[108,72],[104,71],[100,70],[97,69],[94,68],[91,67],[88,66],[85,65],[82,64],[79,63],[76,62],[73,61],[74,60]],
+  '18-26': [[220,100],[216,99],[212,98],[208,97],[204,96],[200,95],[196,94],[192,93],[188,92],[184,91],[180,90],[176,89],[172,88],[168,87],[164,86],[160,85],[156,84],[152,83],[148,82],[144,81],[140,80],[136,79],[132,78],[128,77],[124,76],[120,75],[116,74],[112,73],[108,72],[104,71],[100,70],[97,69],[94,68],[91,67],[88,66],[85,65],[82,64],[79,63],[76,62],[73,61],[70,60]],
   '27-36': [[210,100],[206,99],[202,98],[198,97],[194,96],[190,95],[186,94],[182,93],[178,92],[174,91],[170,90],[166,89],[162,88],[158,87],[154,86],[150,85],[147,84],[144,83],[141,82],[138,81],[130,80],[126,79],[122,78],[118,77],[114,76],[110,75],[107,74],[104,73],[101,72],[98,71],[95,70],[92,69],[89,68],[86,67],[83,66],[80,65],[77,64],[74,63],[71,62],[68,61],[65,60]],
   '37-45': [[200,100],[196,99],[192,98],[188,97],[184,96],[180,95],[176,94],[172,93],[168,92],[164,91],[160,90],[156,89],[152,88],[148,87],[144,86],[140,85],[136,84],[132,83],[128,82],[124,81],[120,80],[116,79],[112,78],[108,77],[104,76],[101,75],[98,74],[95,73],[92,72],[89,71],[86,70],[83,69],[80,68],[77,67],[74,66],[71,65],[68,64],[65,63],[62,62],[59,61],[56,60]],
   '46-55': [[190,100],[186,99],[182,98],[178,97],[174,96],[170,95],[166,94],[162,93],[158,92],[154,91],[150,90],[146,89],[142,88],[138,87],[134,86],[130,85],[126,84],[122,83],[118,82],[114,81],[110,80],[106,79],[102,78],[98,77],[94,76],[91,75],[88,74],[85,73],[82,72],[79,71],[76,70],[73,69],[70,68],[67,67],[64,66],[61,65],[58,64],[55,63],[52,62],[49,61],[46,60]],
 };
-
-// TABLE 13 (M) & 14 (F): 2KM RUN (seconds → points)
-// Lower time = better
-function buildRunTable(rows) {
-  return rows.map(([mm,ss,pts]) => [mm*60+ss, pts]);
-}
-
+function buildRunTable(rows) { return rows.map(([m,s,p]) => [m*60+s, p]); }
 const runData = {
   M: {
     '18-26': buildRunTable([[8,0,100],[8,5,99],[8,10,98],[8,15,97],[8,20,96],[8,25,95],[8,30,94],[8,35,93],[8,40,92],[8,45,91],[8,50,90],[8,55,89],[9,0,88],[9,5,87],[9,10,86],[9,15,85],[9,20,84],[9,25,83],[9,30,82],[9,35,81],[9,40,80],[9,45,79],[9,50,78],[9,55,77],[10,0,76],[10,4,75],[10,8,74],[10,12,73],[10,16,72],[10,20,71],[10,24,70],[10,28,69],[10,32,68],[10,36,67],[10,40,66],[10,44,65],[10,48,64],[10,52,63],[10,56,62],[11,0,61],[11,4,60]]),
@@ -923,220 +433,284 @@ const runData = {
   }
 };
 
-// ========================================================
-// SCORE LOOKUP FUNCTIONS
-// ========================================================
+// ================================================================
+// SLIDER CONFIG: min/max per gender+age, step, label formatter
+// ================================================================
+const CFG = {
+  sprint: {
+    getMin: (g,a) => sprintData[g][a][0][0],
+    getMax: (g,a) => sprintData[g][a].at(-1)[0],
+    step: 1,
+    fmt: v => v + 's'
+  },
+  pushups: {
+    getMin: (g,a) => pushupsData[g][a].at(-1)[0],
+    getMax: (g,a) => pushupsData[g][a][0][0],
+    step: 1,
+    fmt: v => v
+  },
+  longjump: {
+    getMin: () => 100, getMax: (g) => g === 'M' ? 200 : 180,
+    step: 5,
+    fmt: v => (v/100).toFixed(2) + 'm'
+  },
+  weightlift: {
+    getMin: (g) => g === 'M' ? 50 : 35,
+    getMax: (g) => g === 'M' ? 100 : 80,
+    step: 5,
+    fmt: v => v + 'kg'
+  },
+  pullup: {
+    getMin: (g,a) => pullupData[a].at(-1)[0],
+    getMax: (g,a) => pullupData[a][0][0],
+    step: 1,
+    fmt: v => { const m=Math.floor(v/60), s=v%60; return m+':'+(s<10?'0':'')+s; }
+  },
+  run: {
+    getMin: (g,a) => runData[g][a][0][0],
+    getMax: (g,a) => runData[g][a].at(-1)[0],
+    step: 1,
+    fmt: v => { const m=Math.floor(v/60), s=v%60; return m+':'+(s<10?'0':'')+s; }
+  },
+};
 
-// For sprint (lower = better): find row where value <= threshold
-function lookupLowerBetter(table, value) {
-  // Sort ascending by threshold
+// ================================================================
+// LOOKUP HELPERS
+// ================================================================
+function lowerBetter(table, value) {
   const sorted = [...table].sort((a,b) => a[0]-b[0]);
-  // Find where value <= threshold
-  for (let i = 0; i < sorted.length; i++) {
-    if (value <= sorted[i][0]) return sorted[i][1];
-  }
-  return null; // too slow
+  for (const [thresh, pts] of sorted) { if (value <= thresh) return pts; }
+  return null;
+}
+function higherBetter(table, value) {
+  const sorted = [...table].sort((a,b) => a[0]-b[0]);
+  let sc = null;
+  for (const [thresh, pts] of sorted) { if (value >= thresh) sc = pts; }
+  return sc;
+}
+function lookupPullup(a, secs) {
+  const sorted = [...pullupData[a]].sort((a,b) => a[0]-b[0]);
+  let sc = null;
+  for (const [thresh, pts] of sorted) { if (secs >= thresh) sc = pts; }
+  return sc;
 }
 
-// For pushups/longjump/weightlift (higher = better): find highest threshold <= value
-function lookupHigherBetter(table, value) {
-  const sorted = [...table].sort((a,b) => a[0]-b[0]);
-  let score = null;
-  for (let i = 0; i < sorted.length; i++) {
-    if (value >= sorted[i][0]) score = sorted[i][1];
-  }
-  return score;
+const G = () => document.getElementById('gender').value;
+const A = () => document.getElementById('ageGroup').value;
+
+function getRaw(disc) {
+  if (disc === 'longjump') { const v=parseFloat(document.getElementById('longjump').value); return isNaN(v)?null:v; }
+  if (disc === 'pullup')   { const m=document.getElementById('pullup_min').value, s=document.getElementById('pullup_sec').value; if(!m&&!s) return null; return (parseInt(m)||0)*60+(parseInt(s)||0); }
+  if (disc === 'run')      { const m=document.getElementById('run_min').value, s=document.getElementById('run_sec').value; if(!m) return null; return (parseInt(m)||0)*60+(parseInt(s)||0); }
+  const v = parseFloat(document.getElementById(disc).value); return isNaN(v)?null:v;
 }
 
-// For pullup hold (higher seconds = better)
-function lookupPullup(ageGroup, seconds) {
-  const table = pullupData[ageGroup];
-  const sorted = [...table].sort((a,b) => a[0]-b[0]);
-  let score = null;
-  for (let i = 0; i < sorted.length; i++) {
-    if (seconds >= sorted[i][0]) score = sorted[i][1];
-  }
-  return score;
-}
-
-function getGender() { return document.getElementById('gender').value; }
-function getAge() { return document.getElementById('ageGroup').value; }
-
-function getScore(disc) {
-  const g = getGender(), a = getAge();
-  let score = null;
-
+function calcScore(disc) {
+  const g=G(), a=A(), raw=getRaw(disc);
+  if (raw===null) return null;
+  let sc = null;
   switch(disc) {
-    case 'sprint': {
-      const v = parseFloat(document.getElementById('sprint').value);
-      if (isNaN(v)) return null;
-      score = lookupLowerBetter(sprintData[g][a], v);
-      break;
-    }
-    case 'pushups': {
-      const v = parseInt(document.getElementById('pushups').value);
-      if (isNaN(v)) return null;
-      score = lookupHigherBetter(pushupsData[g][a], v);
-      break;
-    }
-    case 'longjump': {
-      const v = parseFloat(document.getElementById('longjump').value);
-      if (isNaN(v)) return null;
-      score = lookupHigherBetter(longjumpData[g], v);
-      break;
-    }
-    case 'weightlift': {
-      const v = parseInt(document.getElementById('weightlift').value);
-      if (isNaN(v)) return null;
-      score = lookupHigherBetter(weightliftData[g], v);
-      break;
-    }
-    case 'pullup': {
-      const m = parseInt(document.getElementById('pullup_min').value) || 0;
-      const s = parseInt(document.getElementById('pullup_sec').value) || 0;
-      if (!document.getElementById('pullup_min').value && !document.getElementById('pullup_sec').value) return null;
-      const total = m * 60 + s;
-      score = lookupPullup(a, total);
-      break;
-    }
-    case 'run': {
-      const m = parseInt(document.getElementById('run_min').value);
-      const s = parseInt(document.getElementById('run_sec').value) || 0;
-      if (isNaN(m)) return null;
-      const total = m * 60 + s;
-      score = lookupLowerBetter(runData[g][a], total);
-      break;
-    }
+    case 'sprint':     sc = lowerBetter(sprintData[g][a], raw); break;
+    case 'pushups':    sc = higherBetter(pushupsData[g][a], raw); break;
+    case 'longjump':   sc = higherBetter(longjumpData[g], raw); break;
+    case 'weightlift': sc = higherBetter(weightliftData[g], raw); break;
+    case 'pullup':     sc = lookupPullup(a, raw); break;
+    case 'run':        sc = lowerBetter(runData[g][a], raw); break;
   }
-
-  // 🔥 KEY FIX: convert anything below 60 into 0
-  if (score === null) return 0;
-  if (score < 60) return 0;
-
-  return score;
+  if (sc === null) return 0;
+  return sc < 60 ? 0 : sc;
 }
 
-function scoreColor(score) {
-  if (score === null) return 'na';
-  if (score >= 90) return 'excellent';
-  if (score >= 60) return 'pass';
+function colorClass(sc) {
+  if (sc === null) return 'na';
+  if (sc >= 90) return 'excellent';
+  if (sc >= 60) return 'pass';
   return 'fail';
 }
 
-function calcSingle(disc) {
-  const score = getScore(disc);
-  const el = document.getElementById('sv_' + disc);
-  if (el) {
-    el.textContent = score !== null ? score : '—';
-    el.className = 'score-val ' + scoreColor(score);
-  }
+// ================================================================
+// SLIDER FILL
+// ================================================================
+function fillSlider(id) {
+  const sl = document.getElementById(id);
+  if (!sl) return;
+  const min=parseFloat(sl.min), max=parseFloat(sl.max), val=parseFloat(sl.value);
+  const pct = isNaN(val) ? 0 : ((val-min)/(max-min))*100;
+  sl.style.setProperty('--pct', pct+'%');
 }
 
-function resetScores() {
-  ['sprint','pushups','longjump','weightlift','pullup','run'].forEach(d => {
-    const el = document.getElementById('sv_' + d);
-    if (el) { el.textContent = '—'; el.className = 'score-val na'; }
-    calcSingle(d);
+// ================================================================
+// BADGE UPDATE
+// ================================================================
+function updateBadge(disc) {
+  const sc = calcScore(disc);
+  const el = document.getElementById('sv_'+disc);
+  if (!el) return;
+  el.textContent = sc===null ? '—' : sc===0 ? '<60' : sc;
+  el.className = 'score-val ' + (sc===null?'na': sc===0?'fail': colorClass(sc));
+}
+
+// ================================================================
+// SLIDER → number inputs (called when user drags)
+// ================================================================
+function onSlider(disc) {
+  const sl = document.getElementById('sl_'+disc);
+  if (!sl) return;
+  const val = parseFloat(sl.value);
+  fillSlider('sl_'+disc);
+
+  if (disc === 'longjump') {
+    document.getElementById('longjump').value = (val/100).toFixed(2);
+  } else if (disc === 'pullup') {
+    document.getElementById('pullup_min').value = Math.floor(val/60);
+    document.getElementById('pullup_sec').value = String(val%60).padStart(2,'0');
+  } else if (disc === 'run') {
+    document.getElementById('run_min').value = Math.floor(val/60);
+    document.getElementById('run_sec').value = String(val%60).padStart(2,'0');
+  } else {
+    document.getElementById(disc).value = val;
+  }
+  updateBadge(disc);
+}
+
+// ================================================================
+// number inputs → slider (called when user types)
+// ================================================================
+function onNum(disc) {
+  const sl = document.getElementById('sl_'+disc);
+  if (disc === 'longjump') {
+    const v = parseFloat(document.getElementById('longjump').value);
+    if (!isNaN(v) && sl) { sl.value = Math.round(v*100); fillSlider('sl_longjump'); }
+  } else if (disc === 'pullup') {
+    const m=parseInt(document.getElementById('pullup_min').value)||0;
+    const s=parseInt(document.getElementById('pullup_sec').value)||0;
+    if (sl) { sl.value = m*60+s; fillSlider('sl_pullup'); }
+  } else if (disc === 'run') {
+    const m=parseInt(document.getElementById('run_min').value)||0;
+    const s=parseInt(document.getElementById('run_sec').value)||0;
+    if (sl) { sl.value = m*60+s; fillSlider('sl_run'); }
+  } else {
+    const v = parseFloat(document.getElementById(disc).value);
+    if (!isNaN(v) && sl) { sl.value = v; fillSlider('sl_'+disc); }
+  }
+  updateBadge(disc);
+}
+
+// ================================================================
+// REBUILD SLIDERS on gender/age change
+// ================================================================
+function rebuildSliders() {
+  const g=G(), a=A();
+  ['sprint','pushups','longjump','weightlift','pullup','run'].forEach(disc => {
+    const cfg = CFG[disc];
+    const sl = document.getElementById('sl_'+disc);
+    if (!sl) return;
+    const mn = cfg.getMin(g,a), mx = cfg.getMax(g,a);
+    sl.min = mn; sl.max = mx; sl.step = cfg.step;
+    // clamp
+    const cur = parseFloat(sl.value);
+    if (isNaN(cur) || cur < mn) sl.value = mn;
+    else if (cur > mx) sl.value = mx;
+    // labels
+    const minEl = document.getElementById('smin_'+disc);
+    const maxEl = document.getElementById('smax_'+disc);
+    if (minEl) minEl.textContent = cfg.fmt(mn);
+    if (maxEl) maxEl.textContent = cfg.fmt(mx);
+    fillSlider('sl_'+disc);
+    updateBadge(disc);
   });
+}
+
+function onProfileChange() {
+  rebuildSliders();
   document.getElementById('results').style.display = 'none';
 }
 
+// ================================================================
+// CALCULATE ALL
+// ================================================================
 function calculateAll() {
-  const disciplines = [
-    { id: 'sprint', name: 'Sprint me Shtirje', icon: '⚡' },
-    { id: 'pushups', name: 'Pompa (1 min)', icon: '💪' },
-    { id: 'longjump', name: 'Kërcim së Largu', icon: '🦘' },
-    { id: 'weightlift', name: 'Ngritje e Peshës', icon: '🏋️' },
-    { id: 'pullup', name: 'Mbajtje mbi Parakrahë', icon: '🤸' },
-    { id: 'run', name: 'Vrapim 2 km', icon: '🏃' },
+  const discs = [
+    { id:'sprint',     name:'Sprint me Shtirje',    icon:'⚡' },
+    { id:'pushups',    name:'Pompa (1 min)',         icon:'💪' },
+    { id:'longjump',   name:'Kërcim së Largu',       icon:'🦘' },
+    { id:'weightlift', name:'Ngritje e Peshës',      icon:'🏋️' },
+    { id:'pullup',     name:'Mbajtje mbi Parakrahë', icon:'🤸' },
+    { id:'run',        name:'Vrapim 2 km',           icon:'🏃' },
   ];
 
-  let total = 0;
-  let enteredCount = 0;
-  const scores = disciplines.map(d => {
-    const s = getScore(d.id);
-    if (s !== null) { total += s; enteredCount++; }
-    return { ...d, score: s };
+  let total=0, cnt=0;
+  const scores = discs.map(d => {
+    const raw = getRaw(d.id);
+    const sc = raw!==null ? calcScore(d.id) : null;
+    if (sc!==null) { total+=sc; cnt++; }
+    return {...d, score: sc};
   });
 
-  // Show results
-  const resultsDiv = document.getElementById('results');
-  resultsDiv.style.display = 'block';
+  const res = document.getElementById('results');
+  res.style.display = 'block';
 
-  // Soldier name
   const name = document.getElementById('soldierName').value.trim();
-  document.getElementById('soldierNameDisplay').textContent = name ? `Kandidati: ${name}` : '';
+  document.getElementById('soldierNameDisplay').textContent = name ? 'Kandidati: '+name : '';
 
-  // Total score display
-  const totalEl = document.getElementById('totalScoreDisplay');
-  const badgeEl = document.getElementById('verdictBadge');
-  const maxPossible = enteredCount * 100;
-  totalEl.textContent = total;
+  const totEl = document.getElementById('totalScoreDisplay');
+  const badEl = document.getElementById('verdictBadge');
+  totEl.textContent = total;
 
-  if (enteredCount < 6) {
-    totalEl.className = 'big-score pass-total';
-    badgeEl.textContent = `${enteredCount}/6 Disiplina`;
-    badgeEl.className = 'verdict-badge pass-v';
-  } else if (scores.some(s => s.score !== null && s.score < 60)) {
-    totalEl.className = 'big-score fail-total';
-    badgeEl.textContent = 'Nuk Kalon';
-    badgeEl.className = 'verdict-badge fail-v';
+  if (cnt < 6) {
+    totEl.className = 'big-score pass-total';
+    badEl.textContent = cnt+'/6 Disiplina'; badEl.className = 'verdict-badge pass-v';
+  } else if (scores.some(s => s.score!==null && s.score < 60)) {
+    totEl.className = 'big-score fail-total';
+    badEl.textContent = 'Nuk Kalon'; badEl.className = 'verdict-badge fail-v';
   } else if (total >= 540) {
-    totalEl.className = 'big-score exc-total';
-    badgeEl.textContent = 'Ekselent';
-    badgeEl.className = 'verdict-badge exc-v';
+    totEl.className = 'big-score exc-total';
+    badEl.textContent = 'Ekselent'; badEl.className = 'verdict-badge exc-v';
   } else if (total >= 360) {
-    totalEl.className = 'big-score pass-total';
-    badgeEl.textContent = 'Kalon';
-    badgeEl.className = 'verdict-badge pass-v';
+    totEl.className = 'big-score pass-total';
+    badEl.textContent = 'Kalon'; badEl.className = 'verdict-badge pass-v';
   } else {
-    totalEl.className = 'big-score fail-total';
-    badgeEl.textContent = 'Nuk Kalon';
-    badgeEl.className = 'verdict-badge fail-v';
+    totEl.className = 'big-score fail-total';
+    badEl.textContent = 'Nuk Kalon'; badEl.className = 'verdict-badge fail-v';
   }
 
-  // Breakdown boxes
-  const breakdown = document.getElementById('scoreBreakdown');
-  breakdown.innerHTML = scores.map(s => {
-    const sc = s.score;
-    const col = sc === null ? '#555' : sc >= 90 ? 'var(--gold)' : sc >= 60 ? 'var(--army-light)' : 'var(--red)';
-    return `<div class="breakdown-item">
-      <div style="font-size:1.1rem;margin-bottom:4px;">${s.icon}</div>
-      <div class="b-score" style="color:${col}">${sc !== null ? sc : '—'}</div>
-      <div class="b-label">${s.name}</div>
-    </div>`;
+  document.getElementById('scoreBreakdown').innerHTML = scores.map(s => {
+    const sc=s.score;
+    const col = sc===null?'#2e4020': sc>=90?'var(--gold)': sc>=60?'var(--army-light)':'var(--red)';
+    return `<div class="breakdown-item"><div style="font-size:1.1rem;margin-bottom:4px">${s.icon}</div><div class="b-score" style="color:${col}">${sc!==null?sc:'—'}</div><div class="b-label">${s.name}</div></div>`;
   }).join('');
 
-  // Results table
-  const tbody = document.getElementById('resultsBody');
-  tbody.innerHTML = scores.map(s => {
-    const sc = s.score;
-    const col = scoreColor(sc);
-    const barClass = col === 'excellent' ? 'bar-exc' : col === 'pass' ? 'bar-pass' : col === 'fail' ? 'bar-fail' : '';
-    const pct = sc !== null ? Math.min(100, sc) : 0;
-    let chipClass = 'chip-na', chipText = 'N/A';
-    if (sc !== null) {
-      if (sc >= 90) { chipClass = 'chip-exc'; chipText = 'Ekselent'; }
-      else if (sc >= 60) { chipClass = 'chip-pass'; chipText = 'Kalon'; }
-      else { chipClass = 'chip-fail'; chipText = 'Nuk Kalon'; }
-    }
+  document.getElementById('resultsBody').innerHTML = scores.map(s => {
+    const sc=s.score;
+    const cls = sc===null?'na': sc>=90?'excellent': sc>=60?'pass':'fail';
+    const barCls = cls==='excellent'?'bar-exc': cls==='pass'?'bar-pass': cls==='fail'?'bar-fail':'';
+    const pct = sc!==null ? Math.min(100,sc) : 0;
+    const chipCls = sc===null?'chip-na': sc>=90?'chip-exc': sc>=60?'chip-pass':'chip-fail';
+    const chipTxt = sc===null?'N/A': sc>=90?'Ekselent': sc>=60?'Kalon':'Nuk Kalon';
+    const colStr = sc===null?'#2e4020': sc>=90?'var(--gold)': sc>=60?'var(--army-light)':'var(--red)';
     return `<tr>
       <td class="disc-name">${s.icon} ${s.name}</td>
-      <td style="color:var(--army-tan);font-size:0.85rem;">—</td>
-      <td class="res-score" style="color:${sc===null?'#555':col==='excellent'?'var(--gold)':col==='pass'?'var(--army-light)':'var(--red)'}">${sc !== null ? sc : '—'}</td>
-      <td class="score-bar-wrap">
-        <div class="score-bar"><div class="score-bar-fill ${barClass}" style="width:${pct}%"></div></div>
-      </td>
-      <td><span class="status-chip ${chipClass}">${chipText}</span></td>
+      <td style="color:var(--army-tan);font-size:.85rem">—</td>
+      <td style="font-family:'Oswald',sans-serif;font-size:1.2rem;font-weight:600;color:${colStr}">${sc!==null?sc:'—'}</td>
+      <td class="score-bar-wrap"><div class="score-bar"><div class="score-bar-fill ${barCls}" style="width:${pct}%"></div></div></td>
+      <td><span class="status-chip ${chipCls}">${chipTxt}</span></td>
     </tr>`;
   }).join('');
 
-  resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  res.scrollIntoView({ behavior:'smooth', block:'start' });
 }
 
-// Init live scoring
-['sprint','pushups','longjump','weightlift','pullup','run'].forEach(d => calcSingle(d));
+// ================================================================
+// INIT
+// ================================================================
+window.addEventListener('DOMContentLoaded', () => {
+  rebuildSliders();
+  // Park sliders at their minimum (no pre-selection)
+  ['sprint','pushups','longjump','weightlift','pullup','run'].forEach(disc => {
+    const sl = document.getElementById('sl_'+disc);
+    if (sl) { sl.value = sl.min; fillSlider('sl_'+disc); }
+  });
+});
 </script>
-
 </body>
 </html>
