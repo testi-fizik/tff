@@ -1099,7 +1099,7 @@ function calculateAll() {
   const breakdown = document.getElementById('scoreBreakdown');
   breakdown.innerHTML = scores.map(s => {
     const sc = s.score;
-    const col = sc === null ? '#555' : sc >= 90 ? 'var(--gold)' : sc >= 60 ? 'var(--army-light)' : 'var(--red)';
+    const col = sc === null ? '#555' : sc >= 90 ? 'var(--army-light)' : sc >= 60 ? 'var(--gold)' : 'var(--red)';
     return `<div class="breakdown-item">
       <div style="font-size:1.1rem;margin-bottom:4px;">${s.icon}</div>
       <div class="b-score" style="color:${col}">${sc !== null ? sc : '—'}</div>
